@@ -1,4 +1,6 @@
+/* In frontend/src/App.css */
 
+/* Reset and basic setup */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -16,6 +18,7 @@ body {
   padding: 2rem;
 }
 
+/* Main App Container */
 .App {
   width: 100%;
   max-width: 900px;
@@ -33,6 +36,7 @@ body {
   color: #333;
 }
 
+/* Coffee Selection */
 .coffee-selection {
   margin-bottom: 2rem;
   display: flex;
@@ -40,6 +44,7 @@ body {
   gap: 1rem;
 }
 
+/* --- THIS IS THE UPDATED BUTTON SECTION --- */
 .coffee-selection button {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -51,6 +56,10 @@ body {
   background-color: #fff;
   color: #a77d61;
   border: 1px solid #a77d61;
+
+  /* This forces both buttons to be the same size */
+  min-width: 220px;
+  box-sizing: border-box; /* This ensures padding is included in the width */
 }
 
 .coffee-selection button:hover {
@@ -58,6 +67,7 @@ body {
   color: #fff;
 }
 
+/* Results Section */
 .results {
   text-align: left;
 }
@@ -88,11 +98,12 @@ body {
   transform: translateY(-5px);
 }
 
+/* --- THIS IS THE UPDATED IMAGE SECTION --- */
 .pairing-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;  
-  object-fit: cover;    
-  display: block;       
+  aspect-ratio: 4 / 3;  /* Use a consistent 4:3 aspect ratio */
+  object-fit: cover;    /* Fill the 4:3 box, cropping as needed */
+  display: block;       /* Fixes potential alignment issues */
 }
 
 .pairing-card-content {
@@ -110,6 +121,7 @@ body {
   color: #555;
 }
 
+/* Loading and Error */
 .loading-message {
   font-size: 1.2rem;
   color: #555;
