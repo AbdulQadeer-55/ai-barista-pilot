@@ -21,9 +21,9 @@ function App() {
 
     try {
       // This is the API call to our backend (which must be running)
-      const response = await axios.post('http://127.0.0.1:8000/generate-pairing', {
-        coffee_id: coffeeId
-      });
+      const response = await axios.post('https://ai-barista-pilot.onrender.com/generate-pairing', {
+  coffee_id: coffeeId
+});
       setPairings(response.data);
     } catch (err) {
       console.error(err);
