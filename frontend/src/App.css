@@ -38,9 +38,10 @@ body {
 /* --- Header --- */
 .header-content {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between !important; /* Force spacing */
   align-items: center;
-  width: 100%;                    
+  width: 100%;       /* Force full width */
+  max-width: 100%;   /* Ensure it doesn't shrink */
   margin-bottom: 2rem;
 }
 
