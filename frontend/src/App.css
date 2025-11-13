@@ -1,6 +1,5 @@
 /* In frontend/src/App.css */
 
-/* Reset and basic setup */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -18,7 +17,6 @@ body {
   padding: 2rem;
 }
 
-/* Main App Container */
 .App {
   width: 100%;
   max-width: 900px;
@@ -26,40 +24,52 @@ body {
   text-align: center;
 }
 
-.App-header {
-  margin-bottom: 2rem;
+/* Header & Cart Button */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .App-header h1 {
-  font-size: 2.5rem;
+  font-size: 1.8rem; /* Slightly smaller to fit cart */
   font-weight: 700;
   color: #333;
+  margin: 0;
+}
+
+.cart-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
 }
 
 /* Coffee Selection */
 .coffee-selection {
   margin-bottom: 2rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
 
-/* --- THIS IS THE UPDATED BUTTON SECTION --- */
 .coffee-selection button {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #a77d61;
   transition: all 0.2s ease-in-out;
   background-color: #fff;
   color: #a77d61;
-  border: 1px solid #a77d61;
-
-  /* This forces both buttons to be the same size */
   min-width: 220px;
-  box-sizing: border-box; /* This ensures padding is included in the width */
+  box-sizing: border-box;
 }
 
 .coffee-selection button:hover {
@@ -92,22 +102,26 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .pairing-card:hover {
   transform: translateY(-5px);
 }
 
-/* --- THIS IS THE UPDATED IMAGE SECTION --- */
 .pairing-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;  /* Use a consistent 4:3 aspect ratio */
-  object-fit: cover;    /* Fill the 4:3 box, cropping as needed */
-  display: block;       /* Fixes potential alignment issues */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
 }
 
 .pairing-card-content {
   padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .pairing-card-content h3 {
@@ -119,19 +133,74 @@ body {
 .pairing-card-content p {
   font-size: 0.95rem;
   color: #555;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
-/* Loading and Error */
-.loading-message {
-  font-size: 1.2rem;
-  color: #555;
+/* Add to Cart Button */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #2ecc71; /* Green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.error-message {
+.add-to-cart-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Cart View */
+.cart-view {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
   font-size: 1.2rem;
-  color: #d9534f;
-  background-color: #fdd;
-  border: 1px solid #d9534f;
+  margin: 1.5rem 0;
+}
+
+.checkout-btn {
+  width: 100%;
   padding: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
   border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-decoration: underline;
+}
+
+.loading-message, .error-message {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+.error-message { color: #d9534f; background-color: #fdd; border-radius: 8px; }
