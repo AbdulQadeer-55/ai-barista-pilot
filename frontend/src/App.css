@@ -38,9 +38,10 @@ body {
 /* --- Header --- */
 .header-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
-  margin-bottom: 0.5rem;
+  width: 100%;                    
+  margin-bottom: 2rem;
 }
 
 .logo-area {
