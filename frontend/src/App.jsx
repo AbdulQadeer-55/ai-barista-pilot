@@ -21,7 +21,7 @@ function App() {
 
     try {
       // Using your LIVE Render Backend
-      const response = await axios.post('https://ai-barista-pilot-backend.onrender.com/generate-pairing', {
+      const response = await axios.post('https://ai-barista-pilot.onrender.com/generate-pairing', {
         coffee_id: coffeeId
       });
       setPairings(response.data);
